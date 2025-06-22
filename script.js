@@ -1,4 +1,4 @@
-let numberInput = prompt("Enter integer numbers from 1 to 100:");
+let numberInput = prompt("Enter integer numbers:");
 
 if (numberInput === null || numberInput.trim() === "") {
   alert("You did not enter anything. Please try again.");
@@ -8,15 +8,17 @@ if (numberInput === null || numberInput.trim() === "") {
   let N = Number(numberInput);
   if (isNaN(N)) {
     alert("You need to enter a number!");
-  } else if (N < 1 || N > 100) {
-    alert("Enter a strict integer from 1 to 100.");
   } else if (!Number.isInteger(N)) {
     alert("Please enter an integer number!");
   } else {
     let output = "";
-    for (let i = 1; i <= 100; i++) {
-      if (i * i <= N) {
-        output += i + " ";
+    if (N >= 0) {
+      for (let i = 1; i <= 100; i++) {
+        if (i * i <= N) {
+          output += i + " ";
+        } else {
+          break;
+        }
       }
     }
     alert(
